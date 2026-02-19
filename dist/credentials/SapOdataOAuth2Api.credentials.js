@@ -5,7 +5,7 @@ class SapOdataOAuth2Api {
     constructor() {
         this.name = 'sapOdataOAuth2Api';
         this.extends = ['oAuth2Api'];
-        this.displayName = 'ATW SAP OData OAuth2 API';
+        this.displayName = 'avanai SAP OData OAuth2 API';
         this.documentationUrl = 'https://help.sap.com/viewer/product/SAP_GATEWAY/';
         this.icon = 'file:../nodes/SapOData/sap.svg';
         this.properties = [

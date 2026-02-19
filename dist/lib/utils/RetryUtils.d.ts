@@ -16,4 +16,3 @@ export declare class RetryHandler {
     private extractStatusCode;
     private isNetworkError;
 }
-export declare function withRetry<T>(fn: () => Promise<T>, options?: IRetryOptions): Promise<T>;

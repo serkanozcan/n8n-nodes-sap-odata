@@ -42,7 +42,7 @@ const constants_2 = require("../../lib/constants");
 class SapODataWebhook {
     constructor() {
         this.description = {
-            displayName: 'ATW SAP Connect OData Webhook',
+            displayName: 'avanai SAP Connect OData Webhook',
             name: 'sapODataTrigger',
             icon: { light: 'file:sap.svg', dark: 'file:sap.dark.svg' },
             group: ['trigger'],

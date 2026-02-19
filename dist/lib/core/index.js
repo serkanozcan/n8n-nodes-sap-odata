@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseStatusCodes = exports.buildCsrfTokenRequest = exports.buildRequestOptions = exports.parseMetadataForFunctionImports = exports.parseMetadataForEntitySets = exports.normalizeODataOptions = exports.escapeODataString = exports.buildODataFilter = exports.buildODataQuery = exports.extractNextLink = exports.extractItemsFromResponse = exports.streamAllItems = exports.fetchAllItems = exports.resetThrottleManager = exports.executeRequest = void 0;
+exports.parseStatusCodes = exports.buildCsrfTokenRequest = exports.buildRequestOptions = exports.parseMetadataForFunctionImports = exports.parseMetadataForEntitySets = exports.normalizeODataOptions = exports.escapeODataString = exports.buildODataFilter = exports.buildODataQuery = exports.extractNextLink = exports.extractItemsFromResponse = exports.streamAllItems = exports.fetchAllItems = exports.executeRequest = void 0;
 var ApiClient_1 = require("./ApiClient");
 Object.defineProperty(exports, "executeRequest", { enumerable: true, get: function () { return ApiClient_1.executeRequest; } });
-Object.defineProperty(exports, "resetThrottleManager", { enumerable: true, get: function () { return ApiClient_1.resetThrottleManager; } });
 var PaginationHandler_1 = require("./PaginationHandler");
 Object.defineProperty(exports, "fetchAllItems", { enumerable: true, get: function () { return PaginationHandler_1.fetchAllItems; } });
 Object.defineProperty(exports, "streamAllItems", { enumerable: true, get: function () { return PaginationHandler_1.streamAllItems; } });

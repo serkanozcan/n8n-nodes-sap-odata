@@ -21,7 +21,7 @@ import { version } from '../../package.json';
  */
 export class SapOData implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'ATW SAP Connect OData',
+		displayName: 'avanai SAP Connect OData',
 		name: 'sapOData',
 		icon: { light: 'file:sap.svg', dark: 'file:sap.dark.svg' },
 		group: ['transform'],

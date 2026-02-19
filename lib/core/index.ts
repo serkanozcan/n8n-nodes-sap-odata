@@ -1,16 +1,8 @@
-/**
- * Core Module Exports
- * Central export point for all core SAP OData functionality
- */
-
-// ApiClient
 export {
 	executeRequest,
-	resetThrottleManager,
 	IApiClientConfig,
 } from './ApiClient';
 
-// PaginationHandler
 export {
 	fetchAllItems,
 	streamAllItems,
@@ -20,7 +12,6 @@ export {
 	IPaginationResult,
 } from './PaginationHandler';
 
-// QueryBuilder
 export {
 	buildODataQuery,
 	buildODataFilter,
@@ -30,7 +21,6 @@ export {
 	parseMetadataForFunctionImports,
 } from './QueryBuilder';
 
-// RequestBuilder
 export {
 	buildRequestOptions,
 	buildCsrfTokenRequest,

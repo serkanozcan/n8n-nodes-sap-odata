@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.COMMON_IDOC_TYPES = exports.COMMON_BAPIS = exports.ZATW_HEADERS = exports.ZATW_ERROR_MESSAGES = exports.ZATW_CREDENTIAL_TYPE = exports.ZATW_IDOC_CACHE_TTL = exports.ZATW_FM_SEARCH_CACHE_TTL = exports.ZATW_FM_CACHE_TTL = exports.ZATW_HEALTH_TIMEOUT = exports.ZATW_TIMEOUT = exports.ZATW_ENDPOINTS = exports.ZATW_BASE_PATH = exports.WEBHOOK_RATE_LIMIT_CLEANUP_INTERVAL = exports.WEBHOOK_RATE_LIMIT_WINDOW = exports.DEFAULT_WEBHOOK_RATE_LIMIT = exports.CACHE_CLEANUP_INTERVAL = exports.CONNECTION_TEST_TIMEOUT = exports.MAX_WEBHOOK_BODY_SIZE = exports.MAX_NESTING_DEPTH = exports.MAX_JSON_SIZE = exports.RETRY_STATUS_CODES = exports.MAX_RETRY_DELAY = exports.INITIAL_RETRY_DELAY = exports.MAX_RETRY_ATTEMPTS = exports.AUTH_METHODS = exports.CREDENTIAL_TYPE = exports.ERROR_MESSAGES = exports.ODATA_V4_NEXT_LINK = exports.ODATA_V4_RESULT_PATH = exports.ODATA_V2_NEXT_LINK = exports.ODATA_V2_RESULT_PATH = exports.HEADERS = exports.SAP_GATEWAY_CSRF_TIMEOUT = exports.SAP_GATEWAY_SESSION_TIMEOUT = exports.CSRF_TOKEN_CACHE_TTL = exports.METADATA_CACHE_TTL = exports.RATE_LIMIT_WINDOW = exports.DEFAULT_RATE_LIMIT = exports.CSRF_TOKEN_TIMEOUT = exports.DEFAULT_TIMEOUT = exports.MIN_PAGE_SIZE = exports.MAX_PAGE_SIZE = exports.DEFAULT_PAGE_SIZE = void 0;
+exports.WEBHOOK_RATE_LIMIT_CLEANUP_INTERVAL = exports.WEBHOOK_RATE_LIMIT_WINDOW = exports.DEFAULT_WEBHOOK_RATE_LIMIT = exports.CACHE_CLEANUP_INTERVAL = exports.CONNECTION_TEST_TIMEOUT = exports.MAX_WEBHOOK_BODY_SIZE = exports.MAX_NESTING_DEPTH = exports.MAX_JSON_SIZE = exports.RETRY_STATUS_CODES = exports.MAX_RETRY_DELAY = exports.INITIAL_RETRY_DELAY = exports.MAX_RETRY_ATTEMPTS = exports.AUTH_METHODS = exports.CREDENTIAL_TYPE = exports.ERROR_MESSAGES = exports.ODATA_V4_NEXT_LINK = exports.ODATA_V4_RESULT_PATH = exports.ODATA_V2_NEXT_LINK = exports.ODATA_V2_RESULT_PATH = exports.HEADERS = exports.SAP_GATEWAY_CSRF_TIMEOUT = exports.SAP_GATEWAY_SESSION_TIMEOUT = exports.CSRF_TOKEN_CACHE_TTL = exports.METADATA_CACHE_TTL = exports.RATE_LIMIT_WINDOW = exports.DEFAULT_RATE_LIMIT = exports.CSRF_TOKEN_TIMEOUT = exports.DEFAULT_TIMEOUT = exports.MIN_PAGE_SIZE = exports.MAX_PAGE_SIZE = exports.DEFAULT_PAGE_SIZE = void 0;
 exports.DEFAULT_PAGE_SIZE = 100;
 exports.MAX_PAGE_SIZE = 1000;
 exports.MIN_PAGE_SIZE = 1;
@@ -48,74 +48,3 @@ exports.CACHE_CLEANUP_INTERVAL = 10;
 exports.DEFAULT_WEBHOOK_RATE_LIMIT = 100;
 exports.WEBHOOK_RATE_LIMIT_WINDOW = 60000;
 exports.WEBHOOK_RATE_LIMIT_CLEANUP_INTERVAL = 300000;
-exports.ZATW_BASE_PATH = '/sap/bc/zatw/connector';
-exports.ZATW_ENDPOINTS = {
-    HEALTH: '/health',
-    META: '/meta',
-    RFC: '/rfc',
-    IDOC: '/idoc',
-    IDOC_TYPES: '/idoc/types',
-    IDOC_MESSAGES: '/idoc/messages',
-    IDOC_TYPE: '/idoc/type',
-    IDOC_SEGMENT: '/idoc/segment',
-};
-exports.ZATW_TIMEOUT = 120000;
-exports.ZATW_HEALTH_TIMEOUT = 10000;
-exports.ZATW_FM_CACHE_TTL = 600000;
-exports.ZATW_FM_SEARCH_CACHE_TTL = 300000;
-exports.ZATW_IDOC_CACHE_TTL = 600000;
-exports.ZATW_CREDENTIAL_TYPE = 'sapConnectorApi';
-exports.ZATW_ERROR_MESSAGES = {
-    NO_CREDENTIALS: 'No SAP Connector credentials configured. Please add SAP Connector API credentials.',
-    CONNECTION_FAILED: 'Failed to connect to SAP system. Please check the host URL and network connectivity.',
-    AUTH_FAILED: 'Authentication failed. Please check your username and password.',
-    ZATW_NOT_INSTALLED: 'ZATW service not found on SAP system. Please ensure the ZATW ABAP package is installed and ICF service is activated.',
-    FM_NOT_FOUND: 'Function module not found or not RFC-enabled.',
-    FM_METADATA_FAILED: 'Failed to retrieve function module metadata.',
-    RFC_EXECUTION_FAILED: 'RFC execution failed.',
-    IDOC_SEND_FAILED: 'Failed to send IDoc.',
-    IDOC_TYPE_NOT_FOUND: 'IDoc type not found.',
-    INVALID_PARAMETERS: 'Invalid function parameters.',
-};
-exports.ZATW_HEADERS = {
-    CONTENT_TYPE: 'Content-Type',
-    ACCEPT: 'Accept',
-    SAP_CLIENT: 'sap-client',
-    SAP_LANGUAGE: 'sap-language',
-    CSRF_TOKEN: 'X-CSRF-Token',
-};
-exports.COMMON_BAPIS = [
-    'BAPI_USER_GET_DETAIL',
-    'BAPI_USER_CREATE1',
-    'BAPI_USER_CHANGE',
-    'BAPI_USER_DELETE',
-    'BAPI_USER_GETLIST',
-    'BAPI_CUSTOMER_GETDETAIL',
-    'BAPI_CUSTOMER_GETLIST',
-    'BAPI_MATERIAL_GETDETAIL',
-    'BAPI_MATERIAL_GETLIST',
-    'BAPI_SALESORDER_GETLIST',
-    'BAPI_SALESORDER_CREATEFROMDAT2',
-    'BAPI_SALESORDER_CHANGE',
-    'BAPI_PO_GETDETAIL',
-    'BAPI_PO_CREATE1',
-    'BAPI_PO_CHANGE',
-    'BAPI_ACC_DOCUMENT_POST',
-    'BAPI_GOODSMVT_CREATE',
-    'BAPI_TRANSACTION_COMMIT',
-    'BAPI_TRANSACTION_ROLLBACK',
-    'RFC_READ_TABLE',
-    'RFC_SYSTEM_INFO',
-];
-exports.COMMON_IDOC_TYPES = [
-    'DEBMAS07',
-    'CREMAS05',
-    'MATMAS05',
-    'ORDERS05',
-    'ORDRSP',
-    'DESADV',
-    'INVOIC02',
-    'HRMD_A07',
-    'WMMBID02',
-    'INFIMG',
-];

@@ -143,26 +143,3 @@ export class RetryHandler {
 		return error.code && networkErrors.includes(error.code);
 	}
 }
-
-/**
- * Execute a function with exponential backoff retry logic
- * @deprecated Use RetryHandler class instead
- *
- * @param fn - Async function to execute
- * @param options - Retry configuration options
- * @returns Promise resolving to function result
- * @throws Last error if all retries exhausted
- *
- * @example
- * const result = await withRetry(
- *   () => sapOdataApiRequest.call(this, 'GET', '/EntitySet'),
- *   { maxAttempts: 3 }
- * );
- */
-export async function withRetry<T>(
-	fn: () => Promise<T>,
-	options: IRetryOptions = {},
-): Promise<T> {
-	const handler = new RetryHandler(options);
-	return handler.execute(fn);
-}

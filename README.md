@@ -145,7 +145,7 @@ docker run -it --rm \
 ### Creating Credentials
 
 1. In n8n, go to **Credentials** → **New Credential**
-2. Search for **"ATW SAP OData API"**
+2. Search for **"avanai SAP OData API"**
 3. Configure the connection:
 
 #### Basic Authentication (On-Premise SAP)

@@ -4,7 +4,7 @@ exports.SapOdataApi = void 0;
 class SapOdataApi {
     constructor() {
         this.name = 'sapOdataApi';
-        this.displayName = 'ATW SAP OData API';
+        this.displayName = 'avanai SAP OData API';
         this.documentationUrl = 'https://help.sap.com/viewer/product/SAP_GATEWAY/';
         this.icon = 'file:../nodes/SapOData/sap.svg';
         this.properties = [

@@ -28,7 +28,7 @@ import { DEFAULT_WEBHOOK_RATE_LIMIT, WEBHOOK_RATE_LIMIT_WINDOW } from '../../lib
  */
 export class SapODataWebhook implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'ATW SAP Connect OData Webhook',
+		displayName: 'avanai SAP Connect OData Webhook',
 		name: 'sapODataTrigger',
 		icon: { light: 'file:sap.svg', dark: 'file:sap.dark.svg' },
 		group: ['trigger'],

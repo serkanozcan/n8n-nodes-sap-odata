@@ -13,7 +13,7 @@ import {
  */
 export class SapOdataApi implements ICredentialType {
 	name = 'sapOdataApi';
-	displayName = 'ATW SAP OData API';
+	displayName = 'avanai SAP OData API';
 	documentationUrl = 'https://help.sap.com/viewer/product/SAP_GATEWAY/';
 	icon = 'file:../nodes/SapOData/sap.svg' as const;
 	properties: INodeProperties[] = [

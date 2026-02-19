@@ -219,13 +219,3 @@ export async function executeRequest(
 	return retryHandler.execute(makeRequest);
 }
 
-/**
- * Reset the throttle manager (useful for testing or workflow restarts)
- * Note: ThrottleManager is now scoped to workflow static data
- * This function is deprecated and kept for backward compatibility
- * @deprecated ThrottleManager is now workflow-scoped, no manual reset needed
- */
-export function resetThrottleManager(): void {
-	// No-op: ThrottleManager is now managed in workflow static data
-	// Each workflow has its own instance that persists with the workflow
-}

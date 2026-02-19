@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RetryHandler = void 0;
-exports.withRetry = withRetry;
 const n8n_workflow_1 = require("n8n-workflow");
 const constants_1 = require("../constants");
 function calculateDelay(attempt, initialDelay, maxDelay, backoffFactor) {
@@ -76,7 +75,3 @@ class RetryHandler {
     }
 }
 exports.RetryHandler = RetryHandler;
-async function withRetry(fn, options = {}) {
-    const handler = new RetryHandler(options);
-    return handler.execute(fn);
-}

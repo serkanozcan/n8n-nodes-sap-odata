@@ -44,7 +44,7 @@ const package_json_1 = require("../../package.json");
 class SapOData {
     constructor() {
         this.description = {
-            displayName: 'ATW SAP Connect OData',
+            displayName: 'avanai SAP Connect OData',
             name: 'sapOData',
             icon: { light: 'file:sap.svg', dark: 'file:sap.dark.svg' },
             group: ['transform'],

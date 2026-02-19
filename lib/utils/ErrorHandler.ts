@@ -161,7 +161,7 @@ export class ODataErrorHandler {
 				'Connection Refused - Cannot reach SAP system',
 				statusCode,
 				{
-					description: `${description}\n\nThe SAP system refused the connection.\n\nHow to fix:\n1. Verify the Host URL in your credential settings\n2. Check if SAP system is running\n3. Verify firewall allows connection to SAP port (443, 8000, 8001)\n4. If using ZATW: Ensure /sap/bc/zatw/connector/ service is active in SICF\n\nTest connectivity:\n- Try accessing the SAP URL in a browser\n- Check with your network administrator`,
+					description: `${description}\n\nThe SAP system refused the connection.\n\nHow to fix:\n1. Verify the Host URL in your credential settings\n2. Check if SAP system is running\n3. Verify firewall allows connection to SAP port (443, 8000, 8001)\n\nTest connectivity:\n- Try accessing the SAP URL in a browser\n- Check with your network administrator`,
 					itemIndex: context.itemIndex,
 				},
 			);
@@ -173,7 +173,7 @@ export class ODataErrorHandler {
 				'Connection Timeout - SAP system not responding',
 				statusCode,
 				{
-					description: `${description}\n\nThe request timed out waiting for SAP response.\n\nHow to fix:\n1. Check SAP system availability\n2. Increase timeout in Advanced Options\n3. For large data requests, reduce batch size\n4. Check network latency to SAP system\n\nIf using ZATW Connector:\n- Verify /sap/bc/zatw/connector/ service is responding\n- Check SAP ICM service status (SMICM)`,
+					description: `${description}\n\nThe request timed out waiting for SAP response.\n\nHow to fix:\n1. Check SAP system availability\n2. Increase timeout in Advanced Options\n3. For large data requests, reduce batch size\n4. Check network latency to SAP system`,
 					itemIndex: context.itemIndex,
 				},
 			);

@@ -34,6 +34,7 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sapODataListSearch = exports.sapODataLoadOptions = void 0;
+const QueryBuilder_1 = require("../../lib/core/QueryBuilder");
 const GenericFunctions_1 = require("./GenericFunctions");
 exports.sapODataLoadOptions = {
     async getServices() {
@@ -202,8 +203,8 @@ exports.sapODataLoadOptions = {
                 }));
             }
             const metadataXml = await GenericFunctions_1.sapOdataApiRequest.call(this, 'GET', '/$metadata');
-            const entitySets = (0, GenericFunctions_1.parseMetadataForEntitySets)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
-            const functionImports = (0, GenericFunctions_1.parseMetadataForFunctionImports)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
+            const entitySets = (0, QueryBuilder_1.parseMetadataForEntitySets)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
+            const functionImports = (0, QueryBuilder_1.parseMetadataForFunctionImports)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
             await CacheManager.setMetadata(this, credentials.host, servicePath, entitySets, functionImports);
             return entitySets.map((entitySet) => ({
                 name: entitySet,
@@ -245,8 +246,8 @@ exports.sapODataLoadOptions = {
                 }));
             }
             const metadataXml = await GenericFunctions_1.sapOdataApiRequest.call(this, 'GET', '/$metadata');
-            const entitySets = (0, GenericFunctions_1.parseMetadataForEntitySets)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
-            const functionImports = (0, GenericFunctions_1.parseMetadataForFunctionImports)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
+            const entitySets = (0, QueryBuilder_1.parseMetadataForEntitySets)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
+            const functionImports = (0, QueryBuilder_1.parseMetadataForFunctionImports)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
             await CacheManager.setMetadata(this, credentials.host, servicePath, entitySets, functionImports);
             return functionImports.map((functionImport) => ({
                 name: functionImport,
@@ -351,8 +352,8 @@ exports.sapODataListSearch = {
             }
             else {
                 const metadataXml = await GenericFunctions_1.sapOdataApiRequest.call(this, 'GET', '/$metadata');
-                entitySets = (0, GenericFunctions_1.parseMetadataForEntitySets)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
-                const functionImports = (0, GenericFunctions_1.parseMetadataForFunctionImports)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
+                entitySets = (0, QueryBuilder_1.parseMetadataForEntitySets)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
+                const functionImports = (0, QueryBuilder_1.parseMetadataForFunctionImports)(typeof metadataXml === 'string' ? metadataXml : JSON.stringify(metadataXml));
                 await CacheManager.setMetadata(this, credentials.host, servicePath, entitySets, functionImports);
             }
             let filteredEntitySets = entitySets;

@@ -2,47 +2,29 @@ import { NodeOperationError, INode } from 'n8n-workflow';
 import { MAX_JSON_SIZE, MAX_NESTING_DEPTH } from '../constants';
 
 /**
- * Security utilities for SAP OData node
- */
-
-/**
- * Build a secure URL from components with validation
- *
- * IMPORTANT: We manually construct the URL instead of using new URL(path, base)
- * because the URL API encodes special characters like ' to %27, which breaks
- * OData entity key syntax like /ProductSet('Key').
- * SAP OData expects unencoded apostrophes in entity keys.
+ * Manually constructs URLs instead of using new URL(path, base) because
+ * the URL API encodes ' to %27, breaking OData entity key syntax like /ProductSet('Key').
  */
 export function buildSecureUrl(host: string, servicePath: string, resource: string): string {
 	try {
 		const baseUrl = new URL(host);
 
-		// Validate protocol
 		if (!['http:', 'https:'].includes(baseUrl.protocol)) {
 			throw new Error(`Invalid protocol: ${baseUrl.protocol}. Only HTTP and HTTPS are allowed.`);
 		}
 
-		// Sanitize path components - remove path traversal attempts
 		let sanitizedServicePath = servicePath.replace(/\.\.[/\\]/g, '');
 		let sanitizedResource = resource.replace(/\.\.[/\\]/g, '');
 
-		// Ensure service path starts with /
 		if (sanitizedServicePath && !sanitizedServicePath.startsWith('/')) {
 			sanitizedServicePath = '/' + sanitizedServicePath;
 		}
 
-		// Build URL manually to preserve OData special characters like ' in entity keys
-		// DO NOT use new URL(fullPath, baseUrl) as it encodes ' to %27
 		const origin = baseUrl.origin;
-		const basePath = baseUrl.pathname.replace(/\/+$/, ''); // Remove trailing slashes from host path
-
-		// Combine all path components
+		const basePath = baseUrl.pathname.replace(/\/+$/, '');
 		let fullPath = basePath + sanitizedServicePath + sanitizedResource;
-
-		// Normalize multiple slashes (but not in protocol)
 		fullPath = fullPath.replace(/\/+/g, '/');
 
-		// Ensure path starts with /
 		if (!fullPath.startsWith('/')) {
 			fullPath = '/' + fullPath;
 		}
@@ -722,12 +704,3 @@ export function validateFunctionName(name: string, node: INode): string {
 
 	return name;
 }
-
-/**
- * Rate limiter class removed - use ThrottleManager instead
- * ThrottleManager provides more sophisticated throttling with multiple strategies
- * and is workflow-scoped to prevent cross-workflow interference.
- *
- * @deprecated This class was never used in production code
- * @see ThrottleManager in ThrottleManager.ts for production rate limiting
- */

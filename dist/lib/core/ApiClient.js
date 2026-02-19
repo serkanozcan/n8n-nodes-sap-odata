@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.executeRequest = executeRequest;
-exports.resetThrottleManager = resetThrottleManager;
 const n8n_workflow_1 = require("n8n-workflow");
 const GenericFunctions_1 = require("../../nodes/SapOData/GenericFunctions");
 const constants_1 = require("../constants");
@@ -111,6 +110,4 @@ async function executeRequest(config) {
         retryNetworkErrors: true,
     });
     return retryHandler.execute(makeRequest);
-}
-function resetThrottleManager() {
 }

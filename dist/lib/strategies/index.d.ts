@@ -1,5 +1,4 @@
 export { IOperationStrategy } from './IOperationStrategy';
-export { BaseEntityStrategy } from './BaseEntityStrategy';
 export { CreateEntityStrategy } from './CreateEntityStrategy';
 export { GetEntityStrategy } from './GetEntityStrategy';
 export { GetAllEntitiesStrategy } from './GetAllEntitiesStrategy';

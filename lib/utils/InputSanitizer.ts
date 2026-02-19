@@ -219,52 +219,6 @@ export function sanitizeArray<T>(
 }
 
 /**
- * Validate email address
- */
-export function validateEmail(email: string): string {
-	// Basic email validation
-	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-	if (!emailPattern.test(email)) {
-		throw new Error('Invalid email address format');
-	}
-
-	// Additional security checks
-	if (email.length > 254) { // RFC 5321
-		throw new Error('Email address too long');
-	}
-
-	// Prevent special characters that could cause issues
-	if (/[<>'"`;]/.test(email)) {
-		throw new Error('Email contains invalid characters');
-	}
-
-	return email.toLowerCase();
-}
-
-/**
- * Sanitize and validate date input
- */
-export function sanitizeDate(dateStr: string): Date {
-	// Remove any non-standard characters
-	const cleaned = dateStr.replace(/[^\d\-T:.Z+]/g, '');
-
-	const date = new Date(cleaned);
-
-	if (isNaN(date.getTime())) {
-		throw new Error('Invalid date format');
-	}
-
-	// Check for reasonable date range (1900-2100)
-	const year = date.getFullYear();
-	if (year < 1900 || year > 2100) {
-		throw new Error('Date out of valid range (1900-2100)');
-	}
-
-	return date;
-}
-
-/**
  * Create a sanitized copy of an object with all strings cleaned
  */
 export function deepSanitize(

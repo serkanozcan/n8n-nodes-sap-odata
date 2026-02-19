@@ -7,8 +7,6 @@ exports.sanitizeFilePath = sanitizeFilePath;
 exports.sanitizeFilterExpression = sanitizeFilterExpression;
 exports.sanitizeNumeric = sanitizeNumeric;
 exports.sanitizeArray = sanitizeArray;
-exports.validateEmail = validateEmail;
-exports.sanitizeDate = sanitizeDate;
 exports.deepSanitize = deepSanitize;
 const n8n_workflow_1 = require("n8n-workflow");
 function sanitizeString(input, maxLength = 1000, allowedPattern) {
@@ -123,31 +121,6 @@ function sanitizeArray(arr, maxLength = 10000, itemSanitizer) {
         return arr.map(itemSanitizer);
     }
     return arr;
-}
-function validateEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        throw new Error('Invalid email address format');
-    }
-    if (email.length > 254) {
-        throw new Error('Email address too long');
-    }
-    if (/[<>'"`;]/.test(email)) {
-        throw new Error('Email contains invalid characters');
-    }
-    return email.toLowerCase();
-}
-function sanitizeDate(dateStr) {
-    const cleaned = dateStr.replace(/[^\d\-T:.Z+]/g, '');
-    const date = new Date(cleaned);
-    if (isNaN(date.getTime())) {
-        throw new Error('Invalid date format');
-    }
-    const year = date.getFullYear();
-    if (year < 1900 || year > 2100) {
-        throw new Error('Date out of valid range (1900-2100)');
-    }
-    return date;
 }
 function deepSanitize(obj, maxDepth = 10, currentDepth = 0) {
     if (currentDepth > maxDepth) {

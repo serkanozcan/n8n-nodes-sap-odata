@@ -14,6 +14,8 @@ import {
 import {
 	parseMetadataForEntitySets,
 	parseMetadataForFunctionImports,
+} from '../../lib/core/QueryBuilder';
+import {
 	resolveServicePath,
 	sapOdataApiRequest,
 } from './GenericFunctions';

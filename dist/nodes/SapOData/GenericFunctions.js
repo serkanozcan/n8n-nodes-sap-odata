@@ -37,15 +37,10 @@ exports.resolveServicePath = void 0;
 exports.sapOdataApiRequest = sapOdataApiRequest;
 exports.getCsrfToken = getCsrfToken;
 exports.sapOdataApiRequestAllItems = sapOdataApiRequestAllItems;
-exports.buildODataFilter = buildODataFilter;
-exports.buildODataQuery = buildODataQuery;
-exports.parseMetadataForEntitySets = parseMetadataForEntitySets;
-exports.parseMetadataForFunctionImports = parseMetadataForFunctionImports;
 exports.formatSapODataValue = formatSapODataValue;
 const constants_1 = require("../../lib/constants");
 const ApiClient_1 = require("../../lib/core/ApiClient");
 const PaginationHandler_1 = require("../../lib/core/PaginationHandler");
-const QueryBuilder_1 = require("../../lib/core/QueryBuilder");
 const RequestBuilder_1 = require("../../lib/core/RequestBuilder");
 const ODataValueFormatter_1 = require("../../lib/utils/ODataValueFormatter");
 const ServicePathResolver_1 = require("../../lib/utils/ServicePathResolver");
@@ -106,18 +101,6 @@ async function sapOdataApiRequestAllItems(propertyName, method, resource, body =
         maxItems,
     };
     return (0, PaginationHandler_1.fetchAllItems)(requestFunction, config);
-}
-function buildODataFilter(filters) {
-    return (0, QueryBuilder_1.buildODataFilter)(filters);
-}
-function buildODataQuery(options) {
-    return (0, QueryBuilder_1.buildODataQuery)(options);
-}
-function parseMetadataForEntitySets(metadataXml) {
-    return (0, QueryBuilder_1.parseMetadataForEntitySets)(metadataXml);
-}
-function parseMetadataForFunctionImports(metadataXml) {
-    return (0, QueryBuilder_1.parseMetadataForFunctionImports)(metadataXml);
 }
 function formatSapODataValue(value, typeHint) {
     return (0, ODataValueFormatter_1.formatODataValue)(value, typeHint, { autoDetect: true, warnOnAutoDetect: false });

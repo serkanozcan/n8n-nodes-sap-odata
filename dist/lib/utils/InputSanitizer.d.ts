@@ -6,6 +6,4 @@ export declare function sanitizeFilePath(path: string, node: INode): string;
 export declare function sanitizeFilterExpression(filter: string, node: INode): string;
 export declare function sanitizeNumeric(value: unknown, min?: number, max?: number, allowDecimals?: boolean): number;
 export declare function sanitizeArray<T>(arr: unknown[], maxLength?: number, itemSanitizer?: (item: unknown) => T): T[];
-export declare function validateEmail(email: string): string;
-export declare function sanitizeDate(dateStr: string): Date;
 export declare function deepSanitize(obj: unknown, maxDepth?: number, currentDepth?: number): unknown;

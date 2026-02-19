@@ -1,8 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OperationStrategyFactory = exports.FunctionImportStrategy = exports.DeleteEntityStrategy = exports.UpdateEntityStrategy = exports.GetMetadataStrategy = exports.GetAllEntitiesStrategy = exports.GetEntityStrategy = exports.CreateEntityStrategy = exports.BaseEntityStrategy = void 0;
-var BaseEntityStrategy_1 = require("./BaseEntityStrategy");
-Object.defineProperty(exports, "BaseEntityStrategy", { enumerable: true, get: function () { return BaseEntityStrategy_1.BaseEntityStrategy; } });
+exports.OperationStrategyFactory = exports.FunctionImportStrategy = exports.DeleteEntityStrategy = exports.UpdateEntityStrategy = exports.GetMetadataStrategy = exports.GetAllEntitiesStrategy = exports.GetEntityStrategy = exports.CreateEntityStrategy = void 0;
 var CreateEntityStrategy_1 = require("./CreateEntityStrategy");
 Object.defineProperty(exports, "CreateEntityStrategy", { enumerable: true, get: function () { return CreateEntityStrategy_1.CreateEntityStrategy; } });
 var GetEntityStrategy_1 = require("./GetEntityStrategy");
