@@ -99,7 +99,7 @@ export async function sapOdataApiRequestAllItems(
 			method,
 			resource: uri ? '' : resource,
 			body,
-			qs: qs || query,
+			qs: qs ? { ...query, ...qs } : query,
 			uri,
 			option: {},
 			csrfToken,

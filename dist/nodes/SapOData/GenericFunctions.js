@@ -87,7 +87,7 @@ async function sapOdataApiRequestAllItems(propertyName, method, resource, body =
             method,
             resource: uri ? '' : resource,
             body,
-            qs: qs || query,
+            qs: qs ? { ...query, ...qs } : query,
             uri,
             option: {},
             csrfToken,
