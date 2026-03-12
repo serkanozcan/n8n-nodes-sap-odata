@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-sap-odata",
-    "version": "0.5.0-beta.2",
+    "version": "0.5.0-beta.3",
     "description": "n8n community node for SAP OData integration (V2 & V4) with trigger support",
     "keywords": [
         "n8n-community-node-package",
@@ -10,6 +10,14 @@
         "gateway"
     ],
     "license": "MIT",
+    "homepage": "https://github.com/sseegebarth/n8n-nodes-sap-odata#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sseegebarth/n8n-nodes-sap-odata.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sseegebarth/n8n-nodes-sap-odata/issues"
+    },
     "author": {
         "name": "Sascha Seegebarth",
         "email": "sascha.seegebarth@avanai.io"
