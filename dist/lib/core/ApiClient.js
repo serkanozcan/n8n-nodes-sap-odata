@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.executeRequest = executeRequest;
+const n8n_workflow_1 = require("n8n-workflow");
 const GenericFunctions_1 = require("../../nodes/SapOData/GenericFunctions");
 const constants_1 = require("../constants");
 const CacheManager_1 = require("../utils/CacheManager");
@@ -9,13 +10,12 @@ const RetryUtils_1 = require("../utils/RetryUtils");
 const SapGatewayCompat_1 = require("../utils/SapGatewayCompat");
 const SapGatewaySession_1 = require("../utils/SapGatewaySession");
 const RequestBuilder_1 = require("./RequestBuilder");
-const _timers = Function('return this')();
 const lastRequestTime = new Map();
 async function throttleRequest(nodeKey, minIntervalMs) {
     const last = lastRequestTime.get(nodeKey) || 0;
     const elapsed = Date.now() - last;
     if (elapsed < minIntervalMs) {
-        await new Promise((r) => _timers.setTimeout(() => r(), minIntervalMs - elapsed));
+        await (0, n8n_workflow_1.sleep)(minIntervalMs - elapsed);
     }
     lastRequestTime.set(nodeKey, Date.now());
 }
