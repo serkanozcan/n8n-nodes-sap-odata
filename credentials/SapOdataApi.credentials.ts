@@ -153,6 +153,10 @@ export class SapOdataApi implements ICredentialType {
 				username: '={{$credentials.username}}',
 				password: '={{$credentials.password}}',
 			},
+			headers: {
+				'sap-client': '={{$credentials.sapClient}}',
+				'sap-language': '={{$credentials.sapLanguage}}',
+			},
 		},
 	};
 

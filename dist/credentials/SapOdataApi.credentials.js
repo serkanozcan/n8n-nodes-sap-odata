@@ -133,6 +133,10 @@ class SapOdataApi {
                     username: '={{$credentials.username}}',
                     password: '={{$credentials.password}}',
                 },
+                headers: {
+                    'sap-client': '={{$credentials.sapClient}}',
+                    'sap-language': '={{$credentials.sapLanguage}}',
+                },
             },
         };
         this.test = {
